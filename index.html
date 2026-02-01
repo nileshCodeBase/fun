@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Be My Valentine, Yaar?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .yes {
+      background: #ff6b6b;
+      color: white;
+      box-shadow: 0 0 10px rgba(255, 107, 107, 0.6);
+    }
+    .yes:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+    }
+    .no {
+      background: #ddd;
+      color: #333;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .meme {
+      margin-top: 20px;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      display: none;
+    }
+    .message {
+      margin-top: 30px;
+      font-size: 1rem;
+      max-width: 500px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>What’s Valentine, balentine?</h1>
+  <p>
+    Will you become the mother of our child… or what? 😏
+  </p>
+
+  <div class="buttons">
+    <button class="yes" id="yesBtn">Yes</button>
+    <button class="no" id="noBtn">No</button>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const memeImg = document.getElementById("memeImg");
+
+    yesBtn.addEventListener("click", () => {
+      yesBtn.style.transform = "scale(1.3)";
+      yesBtn.style.boxShadow = "0 0 30px rgba(255, 107, 107, 0.9)";
+      setTimeout(() => {
+        document.querySelector("h1").innerText = "You naughty 🥰";
+        document.querySelector("p").innerText = "You’re officially my Valentine (and future wife 😉).";
+        document.querySelector(".buttons").innerHTML = " I love you Janhavi💕";
+        memeImg.style.display = "block";
+      }, 500);
+    });
+
+    noBtn.addEventListener("mouseover", () => {
+      noBtn.style.opacity = "0";
+      noBtn.style.transform = "scale(0.5)";
+    });
+
+    noBtn.addEventListener("mouseout", () => {
+      noBtn.style.opacity = "1";
+      noBtn.style.transform = "scale(1)";
+    });
+  </script>
+</body>
+</html>
